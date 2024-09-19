@@ -16,9 +16,9 @@
       <div v-show="!isCount" class="btn btn-sm" :class="isUnique ? 'btn-neutral' : 'btn-accent'" @click="changeUnique">展示近期</div>
       <span v-show="!isCount">搜索</span><input v-show="!isCount" class="input input-sm input-bordered" type="text" v-model="keyText">
     </div>
-    <div style="margin-bottom: 30vh;">
+    <div>
       <data-table :key-text="keyText" :is-unique="isUnique" v-show="!isCount"></data-table>
-      <statics v-show="isCount"></statics>
+      <statics v-show="isCount" style="margin-bottom: 30vh;"></statics>
     </div>
   </div>
 </div>

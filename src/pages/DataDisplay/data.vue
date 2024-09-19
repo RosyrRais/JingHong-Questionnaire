@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="overflow-x-scroll">
     <table class="table">
       <thead>
         <tr>
@@ -74,7 +74,6 @@ const getAnswers = () => {
   }), {
     debounceWait: 400,
     onSuccess(res: any) {
-      console.log(res);
       if(res.code === 200) {
         totalPageNum.value = res.data.total_page_num;
         answers.value = res.data.answers_data.question_answers;
