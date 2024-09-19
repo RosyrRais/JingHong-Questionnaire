@@ -16,7 +16,7 @@
           <th>{{ index+1 }}</th>
           <th>{{ t }}</th>
           <th v-for="ans in answers">
-            <overflow-panel :text="ans.answers[index]"/>
+            <overflow-panel :text="ans.answers[index]" :is-photo="ans.question_type == 5"/>
           </th>
         </tr>
       </tbody>

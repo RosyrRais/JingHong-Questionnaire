@@ -1,17 +1,18 @@
 <template>
   <div class="relative cursor-default">
-    <div class="overflowText text-slate-700" @click="showModal">{{ text }}</div>
-    <div class="overflowModal" @mouseout="hideModal">{{ text }}</div>
+    <div v-show="!isPhoto" class="overflowText text-slate-700" @click="showModal">{{ text }}</div>
+    <div v-show="!isPhoto" class="overflowModal" @mouseout="hideModal">{{ text }}</div>
+    <el-image class="w-30" :src="text" :preview-src-list="[text]" />
   </div>
 </template>
 
 <script setup lang="ts">
 defineProps<{
   text: string
+  isPhoto: boolean
 }>();
 
 const showModal = (e: MouseEvent) => {
-  console.log("debug:1")
   const et = (e.target as HTMLElement).nextElementSibling as HTMLElement;
   et.style.display = "block";
 }
